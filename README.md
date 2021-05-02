@@ -44,9 +44,9 @@ function VueData(){
 Ollie Bike Sharing Landing Page snippet
 ---------------------------------------
 
-![title](PartSnapOllieLandingPage.png)
+![title](PartSnapOllieLandingPage.PNG)
 
 
 Part of page 2
 --------------
-![title](.png)
+![title](PartSnapPg2.PNG)
