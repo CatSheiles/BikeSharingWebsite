@@ -7,7 +7,7 @@ Overview
 *Turn this 1 page lesson into an entire app for push bike sharing co. 
 *Make it responsive for phones, tablets, desktop devices.
 *Improve landing page - add responsive buttons and extra styling.
-*Link buttons on nav to actual pages with appropriate form, styling, reservation data to book a bike.v
+*Link buttons on nav to actual pages with appropriate form, styling, reservation data to book a bike.
 *Tell customers about the service and of course entice them to book or sign up to newsletters and promos.
 
 Job outline
