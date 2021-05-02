@@ -25,6 +25,7 @@ Changed photos and created a landing page with extra info. It links to 3 sub pag
 
 Vue Code Snippet
 ----------------
+```javascript
 var app = new Vue({
     el: '#app',
     data: VueData,
@@ -40,7 +41,7 @@ function VueData(){
        page: 'main'
     };
 }
-
+```
 Ollie Bike Sharing Landing Page snippet
 ---------------------------------------
 
