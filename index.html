@@ -10,44 +10,48 @@
 <body>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-    <div class="container" id="app"> <!--id=app is needed to say where vue starts -->
+    <div class="container" id="app"> <!-- id=app is to say where vue starts -->
         <div class="nav">
             <h2>Ollie</h2>
             <ul>
-                <li><button v-on:click="changePage('signup')">sign up</button></li>
-                <li><button v-on:click="changePage('search bikes')">search bikes</button></li>
-                <li><button v-on:click="changePage('reserve')">reserve a bike</button></li>
+                <li><button v-on:click="changePage('signup')" class="btn">sign up</button></li>
+                <li><button v-on:click="changePage('search bikes')" class="btn">search bikes</button></li>
+                <li><button v-on:click="changePage('reserve')" class="btn">reserve a bike</button></li>
                 
-                <li>about us</li>
+                <li><button onclick="aboutus()" id="about" class="btn">about us</button></li> <!--about us scrolls down main page to about para -->
             </ul>
         </div>
 
-        <!--PAGE 1-->
+        <!-- PAGE MAIN -->
         <div v-if='page == "main"' class="main">
             <div class="main-background">
                 <h1>Ollie Bike Sharing</h1>
             </div>
 
-            <h2>Share Your Pedals with the World</h2>
+            <h3>Share Your Pedals with the World</h3>
         
-            <img src="https://content.codecademy.com/projects/make-a-website/lesson-1/bikes1.jpg"/> 
+            <img src="redBikes.jpg"/> 
 
-            <img src="https://content.codecademy.com/projects/make-a-website/lesson-1/bikes2.jpg"/>
+            <img src="yellowBike.jpg"/>
 
             <h3>Need a set of wheels while you're in town? </h3>
             <p>Use Ollie to pair your perfect vacation with a stylish, affordable bike rental.<br>
                 Here is a <a href="cities.html">list</a> of cities where you can find us.</p>
                     
-            <!--adding a video. Note you can change controls to autoplay for play on loading-->
+            <!-- adding a video. Note you can change controls to autoplay for play on loading -->
             <video width="320" height="240" controls>
                 <source src="https://content.codecademy.com/projects/make-a-website/lesson-1/ollie.mp4" type="video/mp4">
             </video>
 
-            <p>About Us<br>
-                A bicycle-sharing system, public bicycle scheme, or public bike share scheme, 
-                is a shared transport service in which bicycles are made available for shared use 
-                to individuals on a short term basis for a price or free</p>
+            <p id="abouttext">Welcome to Ollie - All About Us<br></p>
+                <p>Ollie is a premier bike rental and sharing service that provides a platform 
+                    to connect bike owners with active people looking to rent or borrow around the world. 
+                    Through our service, owners list their bikes, renters search for a bike in 
+                    whatever area they want, and complete the rental process easily through our website, 
+                    mobile app, or in-store kiosks. We even offer various protection options and 
+                    delivery services to make everyone happy.</p>
 
+            <hr>
 
             <footer>
                 <p>&copy; 2021 OllieBS</p>
@@ -59,46 +63,53 @@
             </footer>
         </div>
 
-
-        <!--PAGE 2-->
+        <!-- PAGE 2 -->
         <div v-if='page == "signup"'>
-            <h1>signup</h1>
-            <button v-on:click="changePage('main')">back</button>
-        
-            <label for="email">Enter your Email address to sign up:</label>
-            <input type="email" id="email" placeholder="enter email address">
-            <label for="password">Next Create an amazing password you will never remember!!</label>
-            <input type="password" id="password" placeholder="create a password">
-            <input type="password" id="retypepassword" placeholder="retype password">
+            <h1>Sign Up</h1>
+            <button class="backBtn" v-on:click="changePage('main')">back</button>
+
+            <div id="form-div">
+                <input class="form-input" type="email" id="email" placeholder="enter email address">
+                <input class="form-input" type="password" id="password" placeholder="create a password">
+                <input class="form-input" type="password" id="retypepassword" placeholder="retype password">
+                <button id="sendform">submit</button>
+            </div>
         </div>
 
-        <!--PAGE 3-->
+        <!-- PAGE 3 -->
         <div v-if='page == "search bikes"'>
             <h1>Checkout the Awesome Ollie Bike Range</h1>
-            <button v-on:click="changePage('main')">back</button>
-
-            <p>You will be spoilt for choice!</p>
+            <button class="backBtn" v-on:click="changePage('main')">back</button>
+            <h4>You will be spoilt for choice!</h4>
+            <p>We specialise in GIANT  brand bikes to match the needs of every member of your group. 
+                Mountain bikes, hybrids, Cruisers, kids bikes, child seats, tagalongs,  
+                (ask if the new Thule trailers are available, they're terrific) 
+                Tandem Bikes and the best e bike range anywhere of fabulous Lekker e-bikes for those who want an extra kick!* 
+                Family bookings and week long plus hires a specialty.  
+                Mobile service only. Free drop off and pickup. 
+                Mobile Eftpos facilities available.</p>
             <img src="page3pic.jpg">
-            <h4>byo helmet</h4>
+            <h4>🚴‍♂️ byo helmet!</h4>
         </div>
 
-         <!--PAGE 4-->
-         <div v-if='page == "reserve"'>
+         <!-- PAGE 4 -->
+        <div v-if='page == "reserve"'>
             <h1>Reserve Your Bike</h1>
-            <button v-on:click="changePage('main')">back</button>
-        
-            <label for="email">Enter your Email address to sign up:</label>
-            <input type="email" id="email" placeholder="enter email address">
-            <label for="name">Your full name</label>
-            <input type="name" id="name" placeholder="enter full name">
-            <label for="bike">What bike would you like?</label>
-            <input type="bike" id="bike" placeholder="enter bike model">
-            <label for="days">How many rental days?</label>
-            <input type="days" id="days" placeholder="enter number of days you would like to rent">           
-            <button id="sendform">submit</button>
-        </div>       
-</div>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-<script src="script.js"></script>
+            <button class="backBtn" v-on:click="changePage('main')">back</button>
+            <h4>Enter your details to Reserve your bike</h4>
+
+            <div id="form-div">
+                <input class="form-input" type="email" id="email" placeholder="enter email address">
+                <input class="form-input" type="name" id="name" placeholder="enter full name">
+                <input class="form-input" type="bike" id="bike" placeholder="enter bike model">
+                <input class="form-input" type="days" id="days" placeholder="enter number of days you would like to rent">           
+                <button id="sendform">submit</button>
+            </div>
+            <img src="yellowLotOfBikes.jpg">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
